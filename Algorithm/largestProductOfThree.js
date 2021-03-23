@@ -1,38 +1,11 @@
 const largestProductOfThree = function (arr) {
-  // TODO: 여기에 코드를 작성합니다.
-  // 배열의 음수가 홀수면?
-  // 절대값으로 곱하고
-  // 배열의 음수가 짝수면
-  // 그냥 크기로 곱하고?
-  let count = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < 0) {
-      count++;
-    }
-  }
-  if (count % 2 === 0) {
-    // 짝수함수 실행
-  } else {
-    // 홀수함수 실행
-  }
 
-  let positiveArr = [];
-  for (let num of arr) {
-    const positiveNum = Math.abs(num);
-    positiveArr.push(positiveNum);
-  }
-
-  const isLargestNum = (ele) => Math.max(...positiveArr) === ele;
-
-  let bigger = [];
-  for (let i = 0; i < 3; i++) {
-    bigger.push(Math.max(...positiveArr));
-    let idx = positiveArr.findIndex(isLargestNum);
-    console.log(idx);
-    positiveArr.splice(idx, 1);
-  }
-  let mul = bigger.reduce((a, b) => {
-    return a * b;
-  });
-  return mul;
-};
+  let sortedArr = arr.slice().sort((a, b) => a - b) // arr 오름차순 정렬 후
+  
+  let len = arr.length;
+  
+  let oddMinus = sortedArr[len - 3] * sortedArr[len - 2] * sortedArr[len -1] // 음수가 홀수개이면 가장 큰 숫자 3개를 곱한다
+  let evenMinus = sortedArr[0] * sortedArr[1] * sortedArr[len - 1] // 음수가 짝수개이면 가장 작은 음수 2개를 곱하고 가장 큰 수를 곱한다
+  
+  return Math.max(evenMinus, oddMinus) // 두 개 중 큰 값을 반환한다
+  };
