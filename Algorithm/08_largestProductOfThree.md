@@ -16,12 +16,15 @@ number 타입을 리턴해야 합니다.
 배열의 길이는 3 이상입니다.
 
 ###입출력 예시
+```js
 let output = largestProductOfThree([2, 1, 3, 7]);
 console.log(output); // --> 42 (= 2 * 3 * 7)
 
 output = largestProductOfThree([-1, 2, -5, 7]);
 console.log(output); // --> 35 (= -1 * -5 * 7)
+```
 
+###Code
 ```js
 const largestProductOfThree = function (arr) {
 
