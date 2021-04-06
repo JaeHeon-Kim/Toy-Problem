@@ -32,6 +32,7 @@ console.log(output); // --> -1
 ###Advanced
 단순히 처음부터 끝까지 찾아보는 방법(O(N)) 대신 다른 방법(O(logN))을 탐구해 보세요.
 
+###Code
 ```js
 const rotatedArraySearch = function (rotated, target) {
   // TODO : 여기에 코드를 작성합니다.
